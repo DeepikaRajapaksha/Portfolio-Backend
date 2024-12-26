@@ -14,8 +14,12 @@ connectDB();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+  
 
 // Routes
+console.log('Project routes loaded');
+console.log('Contact routes loaded');
+
 app.use('/api/projects', projectRoutes);
 app.use('/api/contacts', contactRoutes);
 

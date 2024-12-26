@@ -1,6 +1,7 @@
 const Contact = require('../models/contact');
 
 const sendMessage = async (req, res) => {
+  console.log('Send Message Endpoint Triggered');
   const { name, email, message } = req.body;
   try {
     const newContact = new Contact({ name, email, message });
