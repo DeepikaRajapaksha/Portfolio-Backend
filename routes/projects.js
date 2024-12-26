@@ -1,15 +1,11 @@
 const express = require('express');
-const Project = require('../models/project');
+const { getProjects, addProject } = require('../controllers/projectController');
 const router = express.Router();
 
-// Fetch all projects
-router.get('/', async (req, res) => {
-  try {
-    const projects = await Project.find();
-    res.json(projects);
-  } catch (err) {
-    res.status(500).json({ error: 'Server error' });
-  }
-});
+// Get all projects
+router.get('/', getProjects);
+
+// Add a new project
+router.post('/', addProject);
 
 module.exports = router;
